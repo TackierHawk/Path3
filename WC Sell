@@ -27,7 +27,7 @@
 	part.Shape = "Ball"
 	part.Material = "Neon"
 	part.Size = Vector3.new(0.6, 0.6, 0.6)
-	part.Position = waypoint.Position
+	part.Position = waypoint3.Position
 	part.Anchored = true
 	part.CanCollide = false
 	part.Parent = game.Workspace
