@@ -22,7 +22,7 @@
 	local waypoints3 = path3:GetWaypoints()
 
 	for i, waypoint3 in pairs(waypoints3) do
-	for _, waypoint in pairs(waypoints) do
+	for _, waypoint in pairs(waypoints3) do
 	local part = Instance.new("Part")
 	part.Shape = "Ball"
 	part.Material = "Neon"
