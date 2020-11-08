@@ -1,0 +1,42 @@
+	local PathfindingService = game:GetService("PathfindingService")
+
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character
+	local ai = char:WaitForChild("LocalHumanoid")
+	local hrp = char:WaitForChild("HumanoidRootPart")
+	
+	local p1 = game.Workspace["wcbuywaypoint"]
+	local p3 = game.Workspace["fbuywaypoint"]
+	local p4 = game.Workspace["wcSell"]
+
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+	local paper = ReplicatedStorage.RemoteFunctionz.Environment:WaitForChild("RequestCargoPurchase")
+	local apples = ReplicatedStorage.RemoteFunctionz.Environment:WaitForChild("RequestCargoPurchase")
+	local drop = ReplicatedStorage.RemoteFunctionz.Gear:WaitForChild("Crate")
+
+	----------------------------------------------------------------------------------
+
+	local path3 = PathfindingService:CreatePath()
+	path3:ComputeAsync(hrp.Position, p4.Position)
+	local waypoints3 = path3:GetWaypoints()
+
+	for i, waypoint3 in pairs(waypoints3) do
+		if waypoint3.Action == Enum.PathWaypointAction.Jump then
+			ai:ChangeState(Enum.HumanoidStateType.Jumping)
+		end
+		ai:MoveTo(waypoint.Position)
+		ai.MoveToFinished:Wait(1)
+		print("Finished Selling at Whitecrest")
+	end
+
+	local touchede = false
+	p4.Touched:Connect(function(hit)
+		if not touchede then
+			touchede = true
+			drop:FireServer(false)
+			wait(2)
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/TackierHawk/Path1/main/WC%20Buy", true))()
+			touchede = false
+	end	
+end)
