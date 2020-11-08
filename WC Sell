@@ -25,7 +25,7 @@
 		if waypoint3.Action == Enum.PathWaypointAction.Jump then
 			ai:ChangeState(Enum.HumanoidStateType.Jumping)
 		end
-		ai:MoveTo(waypoint.Position)
+		ai:MoveTo(waypoint3.Position)
 		ai.MoveToFinished:Wait(1)
 		print("Finished Selling at Whitecrest")
 	end
