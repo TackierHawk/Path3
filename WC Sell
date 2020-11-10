@@ -36,6 +36,7 @@
 			drop:FireServer(false)
 			wait(0.5)
       loadstring(game:HttpGet("https://raw.githubusercontent.com/TackierHawk/Path1/main/WC%20Buy", true))()
+      wait(5)
 			touchede = false
 	end	
 end)
