@@ -40,3 +40,6 @@
 			touchede = false
 	end	
 end)
+
+wait(2)
+game:GetService("TeleportService"):Teleport(game.PlaceId)
